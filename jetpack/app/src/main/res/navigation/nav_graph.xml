@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navegador">
+
+    <fragment
+        android:id="@+id/unoFragment"
+        android:name="com.example.jetpack.unoFragment"
+        android:label="fragment_uno"
+        tools:layout="@layout/fragment_uno"
+        >
+        <action
+            android:id="@+id/action_unoFragment_to_navegador"
+            app:destination="@id/navegador" />
+        <action
+            android:id="@+id/action_unoFragment_to_camara"
+            app:destination="@id/camara" />
+        <action
+            android:id="@+id/action_unoFragment_to_operaciones"
+            app:destination="@id/operaciones" />
+    </fragment>
+    <fragment
+        android:id="@+id/navegador"
+        android:name="com.example.jetpack.navegador"
+        android:label="fragment_navegador"
+        tools:layout="@layout/fragment_navegador">
+        <action
+            android:id="@+id/action_navegador_to_unoFragment"
+            app:destination="@id/unoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/camara"
+        android:name="com.example.jetpack.camara"
+        android:label="fragment_camara"
+        tools:layout="@layout/fragment_camara" />
+    <fragment
+        android:id="@+id/operaciones"
+        android:name="com.example.jetpack.operaciones"
+        android:label="fragment_operaciones"
+        tools:layout="@layout/fragment_operaciones" >
+        <action
+            android:id="@+id/action_operaciones_to_suma"
+            app:destination="@id/suma" />
+        <action
+            android:id="@+id/action_operaciones_to_resta"
+            app:destination="@id/resta" />
+        <action
+            android:id="@+id/action_operaciones_to_div"
+            app:destination="@id/div" />
+    </fragment>
+    <fragment
+        android:id="@+id/suma"
+        android:name="com.example.jetpack.suma"
+        android:label="fragment_suma"
+        tools:layout="@layout/fragment_suma" />
+    <fragment
+        android:id="@+id/resta"
+        android:name="com.example.jetpack.resta"
+        android:label="fragment_resta"
+        tools:layout="@layout/fragment_resta" />
+    <fragment
+        android:id="@+id/div"
+        android:name="com.example.jetpack.div"
+        android:label="fragment_div"
+        tools:layout="@layout/fragment_div" />
+
+</navigation>
